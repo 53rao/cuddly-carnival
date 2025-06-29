@@ -557,7 +557,29 @@ else:
 ### Flag: picoCTF{tw0_1$_pr!m33991588e}
 
 ## Webex
-### Challaenge: 
+### Challaenge: IntrotoBurp
+Additional details will be available after launching your challenge instance.
+### Solving :
+![alt text](image-1.png)
+After registering when it asks for otp i noticed ther was get and post .After some  invalid otp attempts i noticed the cokkie was same everytime that is   
+*eJxFjUsOgzAQQ--SdRczkB-9DOIzESUwQQkRqqrevcOqO_tZtj9qep1v9VRrXKN6qKnk0J8pEguz4K0mHzTqrkFAR6jBzx6dJw0wGBOMca2TXqjb1vOwk9TKkoWk8xBtEKGzYo-hlCvlWVjlyOli1DdeElPPdR8p34-oG2uw9RLVQvm_CGDV9wdDUzLl.aGGMhA.cL23C6BvruZliOmepKoC-O1cFzk*  
+It is a flask session cookie so I used flask unsign tool to decode it 
+```
+flask-unsign --decode --cookie ".eJxFjUsOgzAQQ--SdRczkB-9DOIzESUwQQkRqqrevcOqO_tZtj9qep1v9VRrXKN6qKnk0J8pEguz4K0mHzTqrkFAR6jBzx6dJw0wGBOMca2TXqjb1vOwk9TKkoWk8xBtEKGzYo-hlCvlWVjlyOli1DdeElPPdR8p34-oG2uw9RLVQvm_CGDV9wdDUzLl.aGGMhA.cL23C6BvruZliOmepKoC-O1cFzk"
+```
+and got the output
+```
+{'city': 'jkjk', 'csrf_token': '60864e8f414921017e1408d8178e400a55f55737', 'full_name': 'shr', 'otp': '511096', 'password': 'unknown14', 'phone_number': '614265138', 'username': 'shr006'}
 
+```
+On enetering the otp,I got the flag
+### Flag :picoCTF{#0TP_Bypvss_SuCc3$S_e1eb16ed}
+
+### Challenge : Power Cookies
+
+### Solving:
+When we click on continue as guest .There is a redirect to /check and a cookie with isAdmin=0 is generated ,if we pass isAdmin=1 cookie we get the flag
+![alt text](image-2.png)
+### Flag : picoCTF{gr4d3_A_c00k13_0d351e23}
 
 
